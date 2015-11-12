@@ -19,7 +19,17 @@ angular.module('rtfmApp', ['ui.router', 'firebase'])
            }
          })
          .state('thread', {
-           url: '/threads/:threadId'
+           url: '/threads/:threadId',
+           templateUrl: '/threads/thread.html',
+           controller: 'threadCtrl',
+           resolve: {
+             threadRef: function(threadService, $stateParams) {
+               return threadService.getThreads($stateParams.threadId);
+             }
+             commentsRef: function(threadService, $stateParams) {
+               return threadService.getComments($stateParams.threadId);
+             }
+           }
          })
 
        });
