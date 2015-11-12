@@ -7,8 +7,10 @@ angular.module('rtfmApp')
          $scope.createThread = function(username, title) {
            $scope.threads.$add({
              username: username,
-             title: title;
+             title: title
            });
+           $scope.username = '';
+           $scope.newThreadTitle = '';
          };
 
        });
