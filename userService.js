@@ -22,7 +22,7 @@ angular.module('rtfmApp')
          };
 
          this.logout = function() {
-           return auth.$unauth();
+           auth.$unauth();
          }
 
          auth.$onAuth(function(authData) {

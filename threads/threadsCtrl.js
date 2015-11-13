@@ -13,10 +13,6 @@ angular.module('rtfmApp')
            $scope.newThreadTitle = '';
          };
 
-         $scope.logout = function() {
-           userService.logout();
-         }
-
        });
 
 

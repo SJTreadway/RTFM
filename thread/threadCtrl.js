@@ -5,6 +5,7 @@ angular.module('rtfmApp')
         var thread = $firebaseObject(threadRef);
 
         thread.$bindTo($scope, 'thread');
+        console.log(thread.title);
 
         $scope.comments = $firebaseArray(commentsRef);
 
