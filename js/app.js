@@ -31,6 +31,23 @@ angular.module('rtfmApp', ['ui.router', 'firebase'])
              }
            }
          })
+         .state('login', {
+           url: '/login',
+           templateUrl: '/login/login.html',
+           controller: 'loginCtrl'
+         })
+         .state('logout', {
+           url: '/logout',
+           controller: function(userService) {
+             userService.logout();
+             console.log('you have successfully logged out')
+           }
+         })
+         .state('signup', {
+           url: '/signup',
+           templateUrl: '/signup/signup.html',
+           controller: 'signupCtrl'
+         })
 
        });
 })();

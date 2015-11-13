@@ -1,0 +1,13 @@
+<h2>Sign Up</h2>
+  <div>
+		<span class="text-danger">{{error}}</span>
+	</div>
+<form ng-submit="register(newUser)">
+  Email: <input type="email" ng-model="newUser.email">
+  Password: <input type="password" ng-model="newUser.password">
+  <button class="btn-primary" type="submit">Register</button>
+</form>
+
+<div>
+  <a href ng-click="toLogin()">Already a user? Login here</a>
+</div>

@@ -1,18 +1,20 @@
 (function() {
 angular.module('rtfmApp')
-       .controller('threadCtrl', function($scope, threadRef, commentsRef, $firebaseArray, $firebaseObject) {
+       .controller('threadCtrl', function ($scope, threadRef, commentsRef, $firebaseObject, $firebaseArray) {
 
-         var thread = $firebaseObject(threadRef);
-         thread.$bindTo($scope, 'thread');
+        var thread = $firebaseObject(threadRef);
 
-       $scope.comments = $firebaseArray(commentsRef);
+        thread.$bindTo($scope, 'thread');
 
-       $scope.createComment = function(username, text) {
-         $scope.comments.$add({
-           username: username,
-           text: text,
-         });
-       };
-    });
+        $scope.comments = $firebaseArray(commentsRef);
 
+        $scope.createComment = function (username, text) {
+          $scope.comments.$add({
+            username: username,
+            text: text
+          });
+          $scope.username = '';
+          $scope.newCommentText = '';
+        };
+      });
 })();

@@ -1,6 +1,6 @@
 (function() {
 angular.module('rtfmApp')
-       .controller('threadsCtrl', function($scope, threadsRef, $firebaseArray) {
+       .controller('threadsCtrl', function($scope, threadsRef, $firebaseArray, userService) {
 
          $scope.threads = $firebaseArray(threadsRef);
 
@@ -12,6 +12,10 @@ angular.module('rtfmApp')
            $scope.username = '';
            $scope.newThreadTitle = '';
          };
+
+         $scope.logout = function() {
+           userService.logout();
+         }
 
        });
 
