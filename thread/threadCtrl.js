@@ -3,10 +3,9 @@ angular.module('rtfmApp')
        .controller('threadCtrl', function ($scope, threadRef, commentsRef, $firebaseObject, $firebaseArray) {
 
         var thread = $firebaseObject(threadRef);
+        console.log('thread', thread);
 
         thread.$bindTo($scope, 'thread');
-        console.log(thread.title);
-
         $scope.comments = $firebaseArray(commentsRef);
 
         $scope.createComment = function (username, text) {

@@ -23,9 +23,11 @@ angular.module('rtfmApp')
 
          this.logout = function() {
            auth.$unauth();
-         }
+           $state.go('login');
+          }
 
          auth.$onAuth(function(authData) {
+           console.log('on Auth fired')
            if (authData) {
              console.log('authenticated');
            } else {

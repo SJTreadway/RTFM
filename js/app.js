@@ -14,7 +14,7 @@ angular.module('rtfmApp', ['ui.router', 'firebase'])
            controller: 'threadsCtrl',
            resolve: {
              threadsRef: function(threadsService) {
-               return threadsService.getThread();
+               return threadsService.getThreads();
              }
            }
          })
